@@ -148,7 +148,6 @@
 
         .toggle-icon.open { transform: rotate(180deg); }
 
-        /* The grid container provides the smoothest animation for iPhone */
         .section-content {
             display: grid;
             grid-template-rows: 0fr;
@@ -163,7 +162,7 @@
         }
 
         .inner-padding-wrapper {
-            min-height: 0; /* Required for the grid collapse to work */
+            min-height: 0; 
         }
 
         .inner-padding {
@@ -173,6 +172,16 @@
         }
 
         /* 6. CONTENT MODULES */
+        
+        /* New Objective Box styling */
+        .objective-box {
+            background: var(--kh-slate-50);
+            border: 1px solid var(--kh-slate-200);
+            border-left: 6px solid var(--kh-teal);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
         .model-card {
             background: var(--kh-slate-50);
             padding: 1.75rem;
@@ -291,9 +300,12 @@
                 <div class="section-content" id="obj-content">
                     <div class="inner-padding-wrapper">
                         <div class="inner-padding">
-                            <p style="font-size: 16px; color: var(--kh-slate-600);">
-                                Install permanent steel bollards to protect building exterior. Process includes asphalt cutting, deep concrete footings, and high-strength concrete core filling for maximum impact resistance.
-                            </p>
+                            <!-- Wrapped in a styled distinguishable box -->
+                            <div class="objective-box">
+                                <p style="font-size: 16px; color: var(--kh-teal); font-weight: 600;">
+                                    Install permanent steel bollards to protect building exterior. Process includes asphalt cutting, deep concrete footings, and high-strength concrete core filling for maximum impact resistance.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -308,7 +320,6 @@
                 <div class="section-content" id="models-content">
                     <div class="inner-padding-wrapper">
                         <div class="inner-padding">
-                            <!-- Option A -->
                             <div class="model-card">
                                 <span class="model-tag">Option A</span>
                                 <h3 class="model-name">48" Steel Pipe</h3>
@@ -320,7 +331,6 @@
                                 </a>
                             </div>
 
-                            <!-- Option B -->
                             <div class="model-card">
                                 <span class="model-tag">Option B</span>
                                 <h3 class="model-name">42" Steel Pipe</h3>
@@ -332,7 +342,6 @@
                                 </a>
                             </div>
 
-                            <!-- Option C -->
                             <div class="model-card">
                                 <span class="model-tag">Option C</span>
                                 <h3 class="model-name">42" Galvanized</h3>
@@ -469,7 +478,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Recommended Models stays OPEN by default
             toggleSection('models');
         });
     </script>
