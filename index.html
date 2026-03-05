@@ -13,7 +13,8 @@
             --kh-teal: #00504d;
             --kh-teal-dark: #003d3a;
             --kh-brick: #f5f1e8;
-            --kh-accent: #10b981;
+            --kh-accent: #a7f3d0; /* Emerald from screenshot */
+            --kh-accent-dark: #064e3b;
             --kh-bg: #f1f5f9;
             --kh-white: #ffffff;
             --kh-slate-50: #f8fafc;
@@ -193,7 +194,22 @@
             line-height: 1.5;
         }
 
-        /* MODEL CARDS */
+        /* BADGE STYLING (Updated to match screenshot aesthetic) */
+        .option-badge {
+            display: inline-block;
+            font-size: 11px; 
+            font-weight: 800; 
+            color: var(--kh-teal-dark); 
+            background: var(--kh-accent);
+            text-transform: uppercase; 
+            padding: 6px 16px;
+            border-radius: 8px;
+            letter-spacing: 0.06em;
+            border: 1.5px solid rgba(0, 80, 77, 0.15);
+            box-shadow: 0 2px 8px rgba(167, 243, 208, 0.4);
+            margin-bottom: 12px;
+        }
+
         .model-card {
             background: var(--kh-slate-50);
             padding: 1.75rem;
@@ -204,20 +220,6 @@
         }
 
         .model-card:active { transform: scale(0.985); }
-        
-        /* Pronounced Tag for Models */
-        .model-tag { 
-            display: inline-block;
-            font-size: 11px; 
-            font-weight: 800; 
-            color: var(--kh-white); 
-            background: var(--kh-teal);
-            text-transform: uppercase; 
-            padding: 4px 12px;
-            border-radius: 4px;
-            letter-spacing: 0.05em;
-            margin-bottom: 12px;
-        }
         
         .model-name { font-size: 1.5rem; font-weight: 700; color: var(--kh-slate-900); }
         .model-sku { font-family: monospace; font-size: 13px; color: var(--kh-slate-400); margin-bottom: 14px; }
@@ -283,25 +285,26 @@
             text-align: center; 
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .summary-box { padding: 2.25rem 1.5rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .summary-box { padding: 2.5rem 1.5rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .summary-box:last-of-type { border-bottom: none; }
         
-        /* High-Visibility Pronounced Labels for Cost Summary */
+        /* Matching the screenshot style for Option labels in Summary */
         .summary-label { 
             display: inline-block;
-            font-size: 11px; 
+            font-size: 12px; 
             color: var(--kh-teal-dark); 
             text-transform: uppercase; 
-            margin-bottom: 18px; 
+            margin-bottom: 20px; 
             font-weight: 800; 
             letter-spacing: 0.08em;
-            padding: 6px 18px;
-            border-radius: 6px;
+            padding: 8px 20px;
+            border-radius: 10px;
             background: var(--kh-accent);
-            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+            border: 1.5px solid rgba(0, 80, 77, 0.2);
+            box-shadow: 0 4px 12px rgba(167, 243, 208, 0.3);
         }
         
-        .summary-value { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.01em; }
+        .summary-value { font-size: 2.75rem; font-weight: 700; letter-spacing: -0.01em; }
 
         /* PPE Grid */
         .ppe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
@@ -363,7 +366,7 @@
                         <div class="inner-padding">
                             <!-- Option A Card -->
                             <div class="model-card">
-                                <span class="model-tag">Option A</span>
+                                <span class="option-badge">Option A</span>
                                 <h3 class="model-name">48" Steel Pipe</h3>
                                 <p class="model-sku">BOLPP-48-5.5</p>
                                 <p class="model-desc">Highest visibility. Includes safety stripes. Best for corners and high traffic areas.</p>
@@ -375,7 +378,7 @@
 
                             <!-- Option B Card -->
                             <div class="model-card">
-                                <span class="model-tag">Option B</span>
+                                <span class="option-badge">Option B</span>
                                 <h3 class="model-name">42" Steel Pipe</h3>
                                 <p class="model-sku">BOLPP-42-5.5</p>
                                 <p class="model-desc">Standard height. Maintains professional profile and building aesthetics.</p>
@@ -387,7 +390,7 @@
 
                             <!-- Option C Card -->
                             <div class="model-card">
-                                <span class="model-tag">Option C</span>
+                                <span class="option-badge">Option C</span>
                                 <h3 class="model-name">42" Galvanized</h3>
                                 <p class="model-sku">BOLPP-42-5.5-HDG</p>
                                 <p class="model-desc">Best for weather longevity. Prevents internal rust in wet climates.</p>
