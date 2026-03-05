@@ -6,7 +6,7 @@
     <title>Bollards Project - 916 Black Locust</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
         
         /* 1. DESIGN TOKENS */
         :root {
@@ -96,7 +96,7 @@
         }
         .lead-name { font-size: 1.5rem; font-weight: 600; }
 
-        /* 5. SMOOTH ACCORDIONS (Grid Height Method) */
+        /* 5. SMOOTH ACCORDIONS */
         .main-content {
             padding: 1.25rem;
             display: flex;
@@ -173,9 +173,8 @@
 
         /* 6. CONTENT MODULES */
         
-        /* UPDATED: Objective Highlight Card Design */
         .objective-box {
-            background: #f0fdfa; /* Harmonious soft teal tint */
+            background: #f0fdfa;
             border: 1px solid #ccfbf1;
             padding: 2rem 1.5rem;
             border-radius: 12px;
@@ -188,12 +187,13 @@
         }
 
         .objective-box p {
-            font-size: 18px; /* Larger focus text */
+            font-size: 18px; 
             color: var(--kh-teal);
             font-weight: 600;
             line-height: 1.5;
         }
 
+        /* MODEL CARDS */
         .model-card {
             background: var(--kh-slate-50);
             padding: 1.75rem;
@@ -204,7 +204,21 @@
         }
 
         .model-card:active { transform: scale(0.985); }
-        .model-tag { font-size: 12px; font-weight: 700; color: var(--kh-teal); text-transform: uppercase; margin-bottom: 6px; }
+        
+        /* Pronounced Tag for Models */
+        .model-tag { 
+            display: inline-block;
+            font-size: 11px; 
+            font-weight: 800; 
+            color: var(--kh-white); 
+            background: var(--kh-teal);
+            text-transform: uppercase; 
+            padding: 4px 12px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+        
         .model-name { font-size: 1.5rem; font-weight: 700; color: var(--kh-slate-900); }
         .model-sku { font-family: monospace; font-size: 13px; color: var(--kh-slate-400); margin-bottom: 14px; }
         .model-desc { font-size: 15px; color: var(--kh-slate-600); margin-bottom: 20px; }
@@ -254,7 +268,7 @@
             box-shadow: none;
         }
 
-        /* Cost Summary Card */
+        /* COST SUMMARY SECTION */
         .cost-summary-card {
             background: var(--kh-teal-dark);
             color: var(--kh-white);
@@ -269,9 +283,24 @@
             text-align: center; 
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .summary-box { padding: 2.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .summary-box { padding: 2.25rem 1.5rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .summary-box:last-of-type { border-bottom: none; }
-        .summary-label { font-size: 13px; color: #a7f3d0; text-transform: uppercase; margin-bottom: 8px; font-weight: 600; }
+        
+        /* High-Visibility Pronounced Labels for Cost Summary */
+        .summary-label { 
+            display: inline-block;
+            font-size: 11px; 
+            color: var(--kh-teal-dark); 
+            text-transform: uppercase; 
+            margin-bottom: 18px; 
+            font-weight: 800; 
+            letter-spacing: 0.08em;
+            padding: 6px 18px;
+            border-radius: 6px;
+            background: var(--kh-accent);
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+        
         .summary-value { font-size: 2.5rem; font-weight: 700; letter-spacing: -0.01em; }
 
         /* PPE Grid */
@@ -312,7 +341,6 @@
                 <div class="section-content" id="obj-content">
                     <div class="inner-padding-wrapper">
                         <div class="inner-padding">
-                            <!-- Alternative design: High-end focused Card -->
                             <div class="objective-box">
                                 <i class="fas fa-bullseye" style="color: var(--kh-teal); font-size: 1.5rem; opacity: 0.7;"></i>
                                 <p>
@@ -333,6 +361,7 @@
                 <div class="section-content" id="models-content">
                     <div class="inner-padding-wrapper">
                         <div class="inner-padding">
+                            <!-- Option A Card -->
                             <div class="model-card">
                                 <span class="model-tag">Option A</span>
                                 <h3 class="model-name">48" Steel Pipe</h3>
@@ -344,6 +373,7 @@
                                 </a>
                             </div>
 
+                            <!-- Option B Card -->
                             <div class="model-card">
                                 <span class="model-tag">Option B</span>
                                 <h3 class="model-name">42" Steel Pipe</h3>
@@ -355,6 +385,7 @@
                                 </a>
                             </div>
 
+                            <!-- Option C Card -->
                             <div class="model-card">
                                 <span class="model-tag">Option C</span>
                                 <h3 class="model-name">42" Galvanized</h3>
@@ -428,7 +459,10 @@
         <!-- Static High-Impact Cost Summary -->
         <section class="cost-summary-card">
             <div class="summary-header">
-                <div style="font-size:15px; font-weight:700; text-transform: uppercase; letter-spacing: 0.05em;">Estimated Project Total (4 Bollards)</div>
+                <div style="font-size:16px; font-weight:700; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Estimated Project Total<br>
+                    <span style="font-size:13px; opacity: 0.8; text-transform: none; letter-spacing: normal;">(4 Bollards)</span>
+                </div>
             </div>
             <div class="summary-totals">
                 <div class="summary-box">
