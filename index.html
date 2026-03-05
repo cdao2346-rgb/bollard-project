@@ -65,7 +65,7 @@
 
     <div class="proposal-container">
         <!-- Professional Header -->
-        <header class="kh-bg-teal text-white px-6 py-6 md:px-10 md:py-8 flex justify-between items-center relative">
+        <header class="kh-bg-teal text-white px-6 py-6 md:px-10 md:py-8 flex justify-between items-center relative border-b border-black/10">
             <div class="flex items-center gap-4">
                 <div class="w-1 bg-emerald-400 h-12 rounded-full opacity-50"></div>
                 <div>
@@ -126,7 +126,7 @@
                     </div>
 
                     <!-- Option C -->
-                    <div class="bg-white rounded-xl p-5 md:p-6 border-2 kh-border-teal shadow-md flex flex-col relative">
+                    <div class="bg-white rounded-xl p-5 md:p-6 border border-slate-200 shadow-sm flex flex-col relative">
                         <span class="text-[9px] font-bold kh-text-teal uppercase tracking-widest mb-1">Option C</span>
                         <h3 class="font-bold text-slate-800 text-sm md:text-base mb-1">42" Galvanized</h3>
                         <p class="text-[10px] text-slate-400 mb-3 font-mono">BOLPP-42-5.5-HDG</p>
@@ -215,6 +215,68 @@
                 </div>
                 <div class="bg-slate-50 p-3 text-center text-[9px] md:text-[10px] text-slate-400 italic border-t border-slate-100">
                     Estimates include all materials, equipment rentals, and labor logistics for a standard 4-bollard installation.
+                </div>
+            </section>
+
+            <!-- Safety & Planning Section -->
+            <section class="space-y-6">
+                <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="kh-bg-teal p-4 text-white font-bold flex items-center gap-2">
+                        <i class="fas fa-triangle-exclamation"></i> Important Planning & Safety Notes
+                    </div>
+                    
+                    <div class="p-6 space-y-6">
+                        <!-- Critical Note -->
+                        <div class="bg-amber-50 border border-amber-200 rounded-lg p-5">
+                            <h3 class="text-amber-800 font-bold text-sm mb-2 flex items-center gap-2">
+                                <i class="fas fa-bolt"></i> CRITICAL NOTE: Underground Utilities
+                            </h3>
+                            <p class="text-amber-900 text-xs leading-relaxed">
+                                Before any digging begins, we must contact the local utility marking service (e.g., 811 or "Call Before You Dig"). Even though we are in a parking lot, gas lines, electrical conduits for parking lights, and water mains can run directly under the asphalt. This call must be made at least 48:72 hours before work starts.
+                            </p>
+                        </div>
+
+                        <!-- Safety Standards -->
+                        <div>
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-4 gap-2">
+                                <h3 class="kh-text-teal font-bold text-sm underline">Safety Standards (DC-82-E)</h3>
+                                <span class="text-[10px] font-bold text-slate-400 italic uppercase">Job Hazard Analysis (DC-85) Required</span>
+                            </div>
+                            
+                            <p class="text-slate-600 text-xs mb-6">
+                                A JHA must be performed before installation to address risks such as flying debris from the jackhammer and heavy lifting of concrete bags.
+                            </p>
+
+                            <!-- PPE Grid -->
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                                <div class="bg-slate-50 p-3 rounded-lg flex flex-col items-center text-center gap-2 border border-slate-100">
+                                    <i class="fas fa-glasses kh-text-teal"></i>
+                                    <span class="text-[9px] font-bold text-slate-700">Eye Protection</span>
+                                    <span class="text-[8px] text-slate-500">Breaking asphalt / mixing</span>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg flex flex-col items-center text-center gap-2 border border-slate-100">
+                                    <i class="fas fa-mitten kh-text-teal"></i>
+                                    <span class="text-[9px] font-bold text-slate-700">Hand Protection</span>
+                                    <span class="text-[8px] text-slate-500">Handling steel / concrete</span>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg flex flex-col items-center text-center gap-2 border border-slate-100">
+                                    <i class="fas fa-ear-listen kh-text-teal"></i>
+                                    <span class="text-[9px] font-bold text-slate-700">Hearing Protection</span>
+                                    <span class="text-[8px] text-slate-500">Jackhammer / Auger use</span>
+                                </div>
+                                <div class="bg-slate-50 p-3 rounded-lg flex flex-col items-center text-center gap-2 border border-slate-100">
+                                    <i class="fas fa-mask kh-text-teal"></i>
+                                    <span class="text-[9px] font-bold text-slate-700">Respiratory</span>
+                                    <span class="text-[8px] text-slate-500">Pouring dry concrete</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-100 p-4 rounded text-xs border-l-4 kh-border-teal">
+                                <span class="font-bold text-slate-800">Work Zone Management:</span> 
+                                <span class="text-slate-600 italic ml-1">The area should be cordoned off with cones or tape to prevent vehicles from entering the workspace while the concrete is curing.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
