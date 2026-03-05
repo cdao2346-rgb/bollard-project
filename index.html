@@ -167,10 +167,6 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
-        .model-card.featured {
-            border: 2px solid var(--kh-teal);
-        }
-
         .model-tag {
             font-size: 9px;
             font-weight: 700;
@@ -239,11 +235,19 @@
             border-left: 4px solid var(--kh-teal);
             padding: var(--space-sm);
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: var(--space-sm);
             border-radius: 0 var(--radius-md) var(--radius-md) 0;
             font-size: 11px;
             color: var(--kh-slate-600);
+        }
+
+        .color-note-title {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--kh-teal);
+            margin-bottom: 2px;
         }
 
         /* Financials Grid */
@@ -581,10 +585,13 @@
 
                 <!-- Custom Color Note -->
                 <div class="color-note">
-                    <div style="color: var(--kh-teal); font-size: 1.5rem;"><i class="fas fa-palette"></i></div>
-                    <p>
-                        <strong>Custom Color Matching:</strong> To match specific building colors (Gray or Blue), order directly from <strong>Vestil (1-800-348-0868)</strong>. Add <strong>"SPO-PC-[color]"</strong> to model number on your purchase order for factory powder-coating.
-                    </p>
+                    <div style="color: var(--kh-teal); font-size: 1.5rem; margin-top: 2px;"><i class="fas fa-palette"></i></div>
+                    <div>
+                        <strong class="color-note-title">Custom Color Matching</strong>
+                        <p>
+                            To match specific building colors (Gray or Blue), order directly from <strong>Vestil (1-800-348-0868)</strong>. Add <strong>"SPO-PC-[color]"</strong> to model number on your purchase order for factory powder-coating.
+                        </p>
+                    </div>
                 </div>
             </section>
 
@@ -687,7 +694,7 @@
                     <div class="critical-alert">
                         <h3><i class="fas fa-bolt"></i> CRITICAL NOTE: Underground Utilities</h3>
                         <p>
-                            Before any digging begins, we must contact the local utility marking service (e.g., 811 or "Call Before You Dig"). Even though we are in a parking lot, gas lines, electrical conduits for parking lights, and water mains can run directly under the asphalt. This call must be made at least 48:72 hours before work starts.
+                            Before any digging begins, we must contact the local utility marking service (e.g., 811 or "Call Before You Dig"). Even though we are in a parking lot, gas lines, electrical conduits for parking lights, and water mains can run directly under the asphalt. This call must be made at least 48 to 72 hours before work starts.
                         </p>
                     </div>
 
