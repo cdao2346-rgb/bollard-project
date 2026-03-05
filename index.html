@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bollard Installation Proposal - 916 Black Locust</title>
+    <title>Bollards Project - 916 Black Locust</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
@@ -46,7 +46,7 @@
         .proposal-container {
             background-color: var(--kh-brick);
             width: 95%;
-            max-width: 600px; /* Mobile App optimized width */
+            max-width: 600px;
             margin: 0 auto;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-radius: var(--radius-md);
@@ -67,7 +67,7 @@
         .header h1 { font-size: 1.35rem; font-weight: 700; margin-bottom: 4px; }
         .header-subtitle { font-size: 0.75rem; color: #d1fae5; opacity: 0.9; margin-bottom: 12px; }
         .header-lead { padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); }
-        .lead-label { font-size: 9px; text-transform: uppercase; color: var(--kh-slate-400); font-weight: 700; }
+        .lead-label { font-size: 9px; text-transform: uppercase; color: #6ee7b7; font-weight: 700; }
         .lead-name { font-size: 1rem; font-weight: 600; }
 
         /* 5. COLLAPSIBLE SECTIONS */
@@ -128,7 +128,7 @@
         }
 
         .section-content.open {
-            max-height: 2500px; /* High enough to contain content */
+            max-height: 2500px;
         }
 
         .inner-padding {
@@ -139,7 +139,6 @@
 
         /* 6. CONTENT MODULES */
         
-        /* Models */
         .model-card {
             background: var(--kh-slate-50);
             padding: var(--space-md);
@@ -149,14 +148,13 @@
             transition: all 0.2s ease;
         }
 
-        .model-card:active { transform: scale(0.98); }
+        .model-card:active { transform: scale(0.99); }
         .model-tag { font-size: 9px; font-weight: 700; color: var(--kh-teal); text-transform: uppercase; }
         .model-name { font-size: 1rem; font-weight: 700; color: var(--kh-slate-900); }
         .model-sku { font-family: monospace; font-size: 10px; color: var(--kh-slate-400); margin-bottom: 8px; }
         .model-desc { font-size: 11px; color: var(--kh-slate-500); margin-bottom: 12px; }
         .model-price { font-size: 1.125rem; font-weight: 700; color: var(--kh-slate-900); margin-bottom: 12px; }
 
-        /* Color matching specific request */
         .color-note {
             background: #f0fdfa;
             padding: 1rem;
@@ -170,14 +168,12 @@
         .color-note strong { display: block; font-size: 12px; color: var(--kh-teal); margin-bottom: 4px; }
         .color-note p { font-size: 11px; color: var(--kh-slate-600); }
 
-        /* Tables & Lists */
         .info-table { width: 100%; border-collapse: collapse; font-size: 11px; }
         .info-table tr { border-bottom: 1px solid var(--kh-slate-100); }
         .info-table td { padding: 10px 0; }
         .td-name { font-weight: 600; color: var(--kh-slate-700); }
         .td-price { color: var(--kh-teal); font-weight: 700; text-align: right; }
 
-        /* Buttons */
         .btn {
             min-height: 44px;
             padding: 0.875rem 1rem;
@@ -186,40 +182,49 @@
             justify-content: center;
             width: 100%;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 11px;
             text-decoration: none;
-            border: 1px solid var(--kh-teal);
-            color: var(--kh-teal);
+            background-color: var(--kh-teal);
+            color: var(--kh-white);
+            border: none;
             transition: all 0.2s ease;
             gap: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .btn:active { transform: scale(0.98); background: var(--kh-teal); color: white; }
+        .btn:active { 
+            transform: scale(0.97); 
+            background-color: var(--kh-teal-dark); 
+            box-shadow: none;
+        }
 
-        /* Cost Summary Section (Keep always visible or separate) */
+        /* Cost Summary Section */
         .cost-summary-card {
-            background: var(--kh-slate-900);
+            background: var(--kh-teal-dark);
             color: var(--kh-white);
             border-radius: var(--radius-md);
             overflow: hidden;
             margin-top: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        .summary-header { background: rgba(255,255,255,0.05); padding: 12px; text-align: center; }
+        .summary-header { 
+            background: rgba(255,255,255,0.08); 
+            padding: 12px; 
+            text-align: center; 
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
         .summary-box { padding: 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .summary-box:last-of-type { border-bottom: none; }
-        .summary-label { font-size: 9px; color: var(--kh-slate-400); text-transform: uppercase; margin-bottom: 4px; }
-        .summary-value { font-size: 1.5rem; font-weight: 700; }
+        .summary-label { font-size: 9px; color: #a7f3d0; text-transform: uppercase; margin-bottom: 4px; opacity: 0.8; font-weight: 600; }
+        .summary-value { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; }
 
-        /* PPE Grid */
         .ppe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
         .ppe-item { background: var(--kh-slate-50); padding: 10px; border-radius: 8px; text-align: center; font-size: 10px; border: 1px solid var(--kh-slate-100); }
         .ppe-item i { color: var(--kh-teal); display: block; margin-bottom: 4px; }
 
-        /* Footer */
         .footer { padding: 2rem 1rem; text-align: center; font-size: 10px; color: var(--kh-slate-400); font-weight: 700; text-transform: uppercase; }
 
-        /* Utilities */
         .critical-box { background: #fffbeb; border: 1px solid #fde68a; padding: 1rem; border-radius: 8px; border-left: 4px solid #f59e0b; margin-bottom: 1rem; }
         .critical-box h3 { color: #92400e; font-size: 12px; margin-bottom: 4px; }
         .critical-box p { font-size: 11px; color: #78350f; }
@@ -231,8 +236,8 @@
     <div class="proposal-container">
         <header class="header">
             <div class="header-brand">
-                <h1>Bollard Proposal</h1>
-                <p class="header-subtitle">916 Black Locust | Kingdom Hall Committee</p>
+                <h1>Bollards Project</h1>
+                <p class="header-subtitle">916 Black Locust | Kingdom Hall Operations Committee</p>
             </div>
             <div class="header-lead">
                 <div class="lead-label">Technical Lead</div>
@@ -265,35 +270,42 @@
                 </div>
                 <div class="section-content" id="models-content">
                     <div class="inner-padding">
-                        <!-- Model Cards -->
+                        <!-- Option A -->
                         <div class="model-card">
                             <span class="model-tag">Option A</span>
                             <h3 class="model-name">48" Steel Pipe</h3>
                             <p class="model-sku">BOLPP-48-5.5</p>
                             <p class="model-desc">Highest visibility. Includes safety stripes. Best for corners.</p>
                             <div class="model-price">$194.00</div>
-                            <a href="https://a.co/d/05AJuRfZ" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> View on Amazon</a>
+                            <a href="https://a.co/d/05AJuRfZ" target="_blank" class="btn">
+                                <i class="fas fa-external-link-alt"></i> View on Amazon
+                            </a>
                         </div>
 
+                        <!-- Option B -->
                         <div class="model-card">
                             <span class="model-tag">Option B</span>
                             <h3 class="model-name">42" Steel Pipe</h3>
                             <p class="model-sku">BOLPP-42-5.5</p>
                             <p class="model-desc">Standard height. Maintains subtle profile.</p>
                             <div class="model-price">$150.99</div>
-                            <a href="https://a.co/d/0ePIBAd5" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> View on Amazon</a>
+                            <a href="https://a.co/d/0ePIBAd5" target="_blank" class="btn">
+                                <i class="fas fa-external-link-alt"></i> View on Amazon
+                            </a>
                         </div>
 
+                        <!-- Option C -->
                         <div class="model-card">
                             <span class="model-tag">Option C</span>
                             <h3 class="model-name">42" Galvanized</h3>
                             <p class="model-sku">BOLPP-42-5.5-HDG</p>
                             <p class="model-desc">Best for weather. Prevents internal rust.</p>
                             <div class="model-price">$150 - $155</div>
-                            <a href="https://www.uline.com/Product/Detail/H-7686/Safety-Guards-Barriers/Pour-in-Place-Safety-Bollard-55-x-42?pricode=WB8306" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> View on Uline</a>
+                            <a href="https://www.uline.com/Product/Detail/H-7686/Safety-Guards-Barriers/Pour-in-Place-Safety-Bollard-55-x-42?pricode=WB8306" target="_blank" class="btn">
+                                <i class="fas fa-external-link-alt"></i> View on Uline
+                            </a>
                         </div>
 
-                        <!-- Color Matching requested layout -->
                         <div class="color-note">
                             <i class="fas fa-palette"></i>
                             <div>
@@ -346,7 +358,7 @@
                 </div>
             </div>
 
-            <!-- Static Cost Summary -->
+            <!-- Cost Summary -->
             <section class="cost-summary-card">
                 <div class="summary-header">
                     <div style="font-size:11px; font-weight:700;">Estimated Project Total (4 Bollards)</div>
@@ -405,19 +417,12 @@
             const content = document.getElementById(sectionId + '-content');
             const icon = document.getElementById(sectionId + '-icon');
             
-            // Close other sections logic (optional, but requested layout shows single focus)
-            /* if(!content.classList.contains('open')) {
-                document.querySelectorAll('.section-content').forEach(el => el.classList.remove('open'));
-                document.querySelectorAll('.toggle-icon').forEach(el => el.classList.remove('open'));
-            }
-            */
-
             content.classList.toggle('open');
             icon.classList.toggle('open');
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Open Recommended Models by default as requested
+            // Open Recommended Models by default
             toggleSection('models');
         });
     </script>
