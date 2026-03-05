@@ -26,8 +26,6 @@
             --kh-slate-900: #0f172a;
             
             --radius-md: 12px;
-            --space-sm: 1rem;
-            --space-md: 1.5rem;
             --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
         }
 
@@ -38,44 +36,71 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--kh-bg);
             color: var(--kh-slate-700);
-            line-height: 1.5;
-            padding: var(--space-sm) 0;
+            line-height: 1.6;
+            padding: 0;
         }
 
-        /* 3. MOBILE-OPTIMIZED CONTAINER */
+        /* 3. EDGE-TO-EDGE MOBILE CONTAINER */
         .proposal-container {
             background-color: var(--kh-brick);
-            width: 95%;
-            max-width: 600px;
+            width: 100%; 
+            max-width: 650px; 
             margin: 0 auto;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: var(--radius-md);
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            min-height: 90vh;
+            min-height: 100vh;
+        }
+
+        @media (min-width: 650px) {
+            .proposal-container {
+                margin: 2rem auto;
+                border-radius: var(--radius-md);
+                min-height: auto;
+            }
         }
 
         /* 4. HEADER */
         .header {
             background-color: var(--kh-teal);
             color: var(--kh-white);
-            padding: var(--space-md);
+            padding: 2.5rem 1.5rem;
             text-align: center;
         }
 
-        .header h1 { font-size: 1.35rem; font-weight: 700; margin-bottom: 4px; }
-        .header-subtitle { font-size: 0.75rem; color: #d1fae5; opacity: 0.9; margin-bottom: 12px; }
-        .header-lead { padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); }
-        .lead-label { font-size: 9px; text-transform: uppercase; color: #6ee7b7; font-weight: 700; }
-        .lead-name { font-size: 1rem; font-weight: 600; }
+        .header h1 { 
+            font-size: 2rem; 
+            font-weight: 700; 
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+        .header-subtitle { 
+            font-size: 1rem; 
+            color: #d1fae5; 
+            opacity: 0.9; 
+            margin-bottom: 24px; 
+        }
+        .header-lead { 
+            padding-top: 16px; 
+            border-top: 1px solid rgba(255,255,255,0.15); 
+        }
+        .lead-label { 
+            font-size: 12px; 
+            text-transform: uppercase; 
+            color: #6ee7b7; 
+            font-weight: 700; 
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+        }
+        .lead-name { font-size: 1.35rem; font-weight: 600; }
 
         /* 5. COLLAPSIBLE SECTIONS */
         .main-content {
-            padding: var(--space-sm);
+            padding: 1.25rem;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 16px;
         }
 
         .section {
@@ -84,36 +109,35 @@
             border: 1px solid var(--kh-slate-200);
             box-shadow: var(--shadow-sm);
             overflow: hidden;
-            transition: all 0.2s ease;
         }
 
         .section-header {
-            padding: 1rem var(--space-md);
+            padding: 1.25rem 1.5rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            min-height: 56px;
+            min-height: 70px;
             user-select: none;
         }
 
         .section-header h2 {
-            font-size: 0.95rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            color: var(--kh-slate-700);
+            color: var(--kh-slate-800);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
-        .section-header i {
+        .section-header i.section-icon {
             color: var(--kh-slate-400);
-            width: 18px;
+            width: 24px;
             text-align: center;
         }
 
         .toggle-icon {
-            font-size: 0.75rem;
+            font-size: 0.9rem;
             color: var(--kh-slate-400);
             transition: transform 0.3s ease;
         }
@@ -128,106 +152,106 @@
         }
 
         .section-content.open {
-            max-height: 2500px;
+            max-height: 4000px;
         }
 
         .inner-padding {
-            padding: 0 var(--space-md) var(--space-md) var(--space-md);
+            padding: 0 1.5rem 2rem 1.5rem;
             border-top: 1px solid var(--kh-slate-50);
-            padding-top: 1rem;
+            padding-top: 1.5rem;
         }
 
         /* 6. CONTENT MODULES */
         
         .model-card {
             background: var(--kh-slate-50);
-            padding: var(--space-md);
-            border-radius: 8px;
+            padding: 1.75rem;
+            border-radius: 10px;
             border: 1px solid var(--kh-slate-100);
-            margin-bottom: 12px;
+            margin-bottom: 20px;
             transition: all 0.2s ease;
         }
 
         .model-card:active { transform: scale(0.99); }
-        .model-tag { font-size: 9px; font-weight: 700; color: var(--kh-teal); text-transform: uppercase; }
-        .model-name { font-size: 1rem; font-weight: 700; color: var(--kh-slate-900); }
-        .model-sku { font-family: monospace; font-size: 10px; color: var(--kh-slate-400); margin-bottom: 8px; }
-        .model-desc { font-size: 11px; color: var(--kh-slate-500); margin-bottom: 12px; }
-        .model-price { font-size: 1.125rem; font-weight: 700; color: var(--kh-slate-900); margin-bottom: 12px; }
+        .model-tag { font-size: 12px; font-weight: 700; color: var(--kh-teal); text-transform: uppercase; margin-bottom: 6px; }
+        .model-name { font-size: 1.4rem; font-weight: 700; color: var(--kh-slate-900); }
+        .model-sku { font-family: monospace; font-size: 13px; color: var(--kh-slate-400); margin-bottom: 14px; }
+        .model-desc { font-size: 14px; color: var(--kh-slate-600); margin-bottom: 20px; }
+        .model-price { font-size: 1.75rem; font-weight: 700; color: var(--kh-slate-900); margin-bottom: 20px; }
 
         .color-note {
             background: #f0fdfa;
-            padding: 1rem;
-            border-radius: 8px;
+            padding: 1.5rem;
+            border-radius: 10px;
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 16px;
             border: 1px solid #ccfbf1;
         }
-        .color-note i { color: var(--kh-teal); font-size: 1.25rem; }
-        .color-note strong { display: block; font-size: 12px; color: var(--kh-teal); margin-bottom: 4px; }
-        .color-note p { font-size: 11px; color: var(--kh-slate-600); }
+        .color-note i { color: var(--kh-teal); font-size: 1.75rem; }
+        .color-note strong { display: block; font-size: 15px; color: var(--kh-teal); margin-bottom: 6px; }
+        .color-note p { font-size: 14px; color: var(--kh-slate-600); }
 
-        .info-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+        .info-table { width: 100%; border-collapse: collapse; font-size: 14px; }
         .info-table tr { border-bottom: 1px solid var(--kh-slate-100); }
-        .info-table td { padding: 10px 0; }
+        .info-table td { padding: 16px 0; }
         .td-name { font-weight: 600; color: var(--kh-slate-700); }
         .td-price { color: var(--kh-teal); font-weight: 700; text-align: right; }
 
         .btn {
-            min-height: 44px;
-            padding: 0.875rem 1rem;
+            min-height: 56px;
+            padding: 1.25rem;
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: 700;
-            font-size: 11px;
+            font-size: 14px;
             text-decoration: none;
             background-color: var(--kh-teal);
             color: var(--kh-white);
             border: none;
             transition: all 0.2s ease;
-            gap: 8px;
+            gap: 12px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .btn:active { 
             transform: scale(0.97); 
             background-color: var(--kh-teal-dark); 
-            box-shadow: none;
         }
 
-        /* Cost Summary Section */
+        /* Cost Summary Card */
         .cost-summary-card {
             background: var(--kh-teal-dark);
             color: var(--kh-white);
             border-radius: var(--radius-md);
             overflow: hidden;
-            margin-top: 4px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 16px 1.25rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         .summary-header { 
             background: rgba(255,255,255,0.08); 
-            padding: 12px; 
+            padding: 20px; 
             text-align: center; 
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .summary-box { padding: 1.25rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .summary-box { padding: 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
         .summary-box:last-of-type { border-bottom: none; }
-        .summary-label { font-size: 9px; color: #a7f3d0; text-transform: uppercase; margin-bottom: 4px; opacity: 0.8; font-weight: 600; }
-        .summary-value { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.01em; }
+        .summary-label { font-size: 12px; color: #a7f3d0; text-transform: uppercase; margin-bottom: 8px; font-weight: 600; }
+        .summary-value { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.01em; }
 
-        .ppe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; }
-        .ppe-item { background: var(--kh-slate-50); padding: 10px; border-radius: 8px; text-align: center; font-size: 10px; border: 1px solid var(--kh-slate-100); }
-        .ppe-item i { color: var(--kh-teal); display: block; margin-bottom: 4px; }
+        /* PPE Grid */
+        .ppe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+        .ppe-item { background: var(--kh-slate-50); padding: 18px; border-radius: 10px; text-align: center; font-size: 13px; border: 1px solid var(--kh-slate-100); }
+        .ppe-item i { color: var(--kh-teal); font-size: 1.5rem; display: block; margin-bottom: 8px; }
 
-        .footer { padding: 2rem 1rem; text-align: center; font-size: 10px; color: var(--kh-slate-400); font-weight: 700; text-transform: uppercase; }
+        .footer { padding: 3.5rem 1.5rem; text-align: center; font-size: 12px; color: var(--kh-slate-500); font-weight: 700; text-transform: uppercase; }
 
-        .critical-box { background: #fffbeb; border: 1px solid #fde68a; padding: 1rem; border-radius: 8px; border-left: 4px solid #f59e0b; margin-bottom: 1rem; }
-        .critical-box h3 { color: #92400e; font-size: 12px; margin-bottom: 4px; }
-        .critical-box p { font-size: 11px; color: #78350f; }
+        .critical-box { background: #fffbeb; border: 1px solid #fde68a; padding: 1.5rem; border-radius: 10px; border-left: 6px solid #f59e0b; margin-bottom: 2rem; }
+        .critical-box h3 { color: #92400e; font-size: 16px; margin-bottom: 8px; }
+        .critical-box p { font-size: 14px; color: #78350f; }
 
     </style>
 </head>
@@ -250,13 +274,13 @@
             <!-- Section: Objective -->
             <div class="section">
                 <div class="section-header" onclick="toggleSection('obj')">
-                    <h2><i class="fas fa-circle-info"></i> Project Objective</h2>
+                    <h2><i class="fas fa-circle-info section-icon"></i> Project Objective</h2>
                     <i class="fas fa-chevron-down toggle-icon" id="obj-icon"></i>
                 </div>
                 <div class="section-content" id="obj-content">
                     <div class="inner-padding">
-                        <p style="font-size: 12px; color: var(--kh-slate-600);">
-                            Install permanent steel bollards to protect building exterior. Process includes asphalt cutting, deep concrete footings, and high-strength concrete core filling.
+                        <p style="font-size: 15px; color: var(--kh-slate-600);">
+                            Install permanent steel bollards to protect building exterior. Process includes asphalt cutting, deep concrete footings, and high-strength concrete core filling for maximum impact resistance.
                         </p>
                     </div>
                 </div>
@@ -265,7 +289,7 @@
             <!-- Section: Models (OPEN BY DEFAULT) -->
             <div class="section">
                 <div class="section-header" onclick="toggleSection('models')">
-                    <h2><i class="fas fa-list-check"></i> Recommended Models</h2>
+                    <h2><i class="fas fa-list-check section-icon"></i> Recommended Models</h2>
                     <i class="fas fa-chevron-down toggle-icon" id="models-icon"></i>
                 </div>
                 <div class="section-content" id="models-content">
@@ -275,7 +299,7 @@
                             <span class="model-tag">Option A</span>
                             <h3 class="model-name">48" Steel Pipe</h3>
                             <p class="model-sku">BOLPP-48-5.5</p>
-                            <p class="model-desc">Highest visibility. Includes safety stripes. Best for corners.</p>
+                            <p class="model-desc">Highest visibility. Includes safety stripes. Best for corners and high traffic areas.</p>
                             <div class="model-price">$194.00</div>
                             <a href="https://a.co/d/05AJuRfZ" target="_blank" class="btn">
                                 <i class="fas fa-external-link-alt"></i> View on Amazon
@@ -287,7 +311,7 @@
                             <span class="model-tag">Option B</span>
                             <h3 class="model-name">42" Steel Pipe</h3>
                             <p class="model-sku">BOLPP-42-5.5</p>
-                            <p class="model-desc">Standard height. Maintains subtle profile.</p>
+                            <p class="model-desc">Standard height. Maintains professional profile and building aesthetics.</p>
                             <div class="model-price">$150.99</div>
                             <a href="https://a.co/d/0ePIBAd5" target="_blank" class="btn">
                                 <i class="fas fa-external-link-alt"></i> View on Amazon
@@ -299,7 +323,7 @@
                             <span class="model-tag">Option C</span>
                             <h3 class="model-name">42" Galvanized</h3>
                             <p class="model-sku">BOLPP-42-5.5-HDG</p>
-                            <p class="model-desc">Best for weather. Prevents internal rust.</p>
+                            <p class="model-desc">Best for weather longevity. Prevents internal rust in wet climates.</p>
                             <div class="model-price">$150 - $155</div>
                             <a href="https://www.uline.com/Product/Detail/H-7686/Safety-Guards-Barriers/Pour-in-Place-Safety-Bollard-55-x-42?pricode=WB8306" target="_blank" class="btn">
                                 <i class="fas fa-external-link-alt"></i> View on Uline
@@ -310,7 +334,7 @@
                             <i class="fas fa-palette"></i>
                             <div>
                                 <strong>Custom Color Matching</strong>
-                                <p>To match building colors (Gray/Blue), order from Vestil (1-800-348-0868). Add "SPO-PC-[color]" to model number on PO for factory coating.</p>
+                                <p>To match specific building colors (Gray or Blue), order from Vestil (1-800-348-0868). Add "SPO-PC-[color]" to model number on PO for factory coating.</p>
                             </div>
                         </div>
                     </div>
@@ -320,7 +344,7 @@
             <!-- Section: Materials -->
             <div class="section">
                 <div class="section-header" onclick="toggleSection('materials')">
-                    <h2><i class="fas fa-box-open"></i> Required Materials</h2>
+                    <h2><i class="fas fa-box-open section-icon"></i> Required Materials</h2>
                     <i class="fas fa-chevron-down toggle-icon" id="materials-icon"></i>
                 </div>
                 <div class="section-content" id="materials-content">
@@ -339,61 +363,64 @@
             <!-- Section: Equipment -->
             <div class="section">
                 <div class="section-header" onclick="toggleSection('equip')">
-                    <h2><i class="fas fa-tools"></i> Equipment Rentals</h2>
+                    <h2><i class="fas fa-tools section-icon"></i> Equipment Rentals</h2>
                     <i class="fas fa-chevron-down toggle-icon" id="equip-icon"></i>
                 </div>
                 <div class="section-content" id="equip-content">
                     <div class="inner-padding">
-                        <div class="equipment-item" style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:8px;">
-                            <span>Jackhammer</span><span style="font-weight:700;">$85.00/day</span>
+                        <div style="display:flex; justify-content:space-between; font-size:15px; margin-bottom:14px;">
+                            <span>Jackhammer</span><span style="font-weight:700; color: var(--kh-teal);">$85.00/day</span>
                         </div>
-                        <div class="equipment-item" style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:8px;">
-                            <span>Post Hole Auger</span><span style="font-weight:700;">$95.00/day</span>
+                        <div style="display:flex; justify-content:space-between; font-size:15px; margin-bottom:14px;">
+                            <span>Post Hole Auger</span><span style="font-weight:700; color: var(--kh-teal);">$95.00/day</span>
                         </div>
-                        <div class="equipment-item" style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:8px;">
-                            <span>Concrete Mixer</span><span style="font-weight:700;">$50.00/day</span>
+                        <div style="display:flex; justify-content:space-between; font-size:15px; margin-bottom:14px;">
+                            <span>Concrete Mixer</span><span style="font-weight:700; color: var(--kh-teal);">$50.00/day</span>
                         </div>
-                        <div style="text-align:right; font-size:10px; color:var(--kh-slate-400); margin-top:10px;">* Standard tools owned</div>
+                        <div style="text-align:right; font-size:12px; color:var(--kh-slate-400); margin-top:16px; font-style: italic;">* Standard power tools provided by team</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Cost Summary -->
-            <section class="cost-summary-card">
-                <div class="summary-header">
-                    <div style="font-size:11px; font-weight:700;">Estimated Project Total (4 Bollards)</div>
-                </div>
-                <div class="summary-totals">
-                    <div class="summary-box">
-                        <div class="summary-label">Option A Total</div>
-                        <div class="summary-value">~$1,194</div>
-                    </div>
-                    <div class="summary-box">
-                        <div class="summary-label">Option B Total</div>
-                        <div class="summary-value">~$1,022</div>
-                    </div>
-                    <div class="summary-box">
-                        <div class="summary-label">Option C Total</div>
-                        <div class="summary-value">~$1,028</div>
-                    </div>
-                </div>
-            </section>
+        </div>
 
+        <!-- Static High-Impact Cost Summary -->
+        <section class="cost-summary-card">
+            <div class="summary-header">
+                <div style="font-size:14px; font-weight:700; text-transform: uppercase; letter-spacing: 0.05em;">Estimated Project Total (4 Bollards)</div>
+            </div>
+            <div class="summary-totals">
+                <div class="summary-box">
+                    <div class="summary-label">Option A Total</div>
+                    <div class="summary-value">~$1,194</div>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-label">Option B Total</div>
+                    <div class="summary-value">~$1,022</div>
+                </div>
+                <div class="summary-box">
+                    <div class="summary-label">Option C Total</div>
+                    <div class="summary-value">~$1,028</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="main-content" style="padding-top: 0;">
             <!-- Section: Safety -->
             <div class="section">
                 <div class="section-header" onclick="toggleSection('safety')">
-                    <h2><i class="fas fa-triangle-exclamation"></i> Safety & Planning</h2>
+                    <h2><i class="fas fa-triangle-exclamation section-icon"></i> Safety & Planning</h2>
                     <i class="fas fa-chevron-down toggle-icon" id="safety-icon"></i>
                 </div>
                 <div class="section-content" id="safety-content">
                     <div class="inner-padding">
                         <div class="critical-box">
                             <h3><i class="fas fa-bolt"></i> CRITICAL: Underground Utilities</h3>
-                            <p>Contact <strong>811</strong> at least 48:72 hours before work starts. Gas, electrical conduits, and water mains run directly under asphalt.</p>
+                            <p>Contact <strong>811</strong> at least 48:72 hours before work starts. Gas lines and electrical conduits for parking lights run directly under the asphalt.</p>
                         </div>
                         
-                        <h4 style="font-size:11px; font-weight:700; color:var(--kh-teal); text-decoration:underline;">Standards (DC-82-E)</h4>
-                        <p style="font-size:10px; color:var(--kh-slate-500); margin-bottom:12px;">A JHA (DC-85) must address flying debris and heavy lifting.</p>
+                        <h4 style="font-size:14px; font-weight:700; color:var(--kh-teal); text-decoration:underline; margin-bottom: 8px;">Standards (DC-82-E)</h4>
+                        <p style="font-size:13px; color:var(--kh-slate-500); margin-bottom:18px;">A Job Hazard Analysis (DC-85) must address flying debris and heavy lifting.</p>
                         
                         <div class="ppe-grid">
                             <div class="ppe-item"><i class="fas fa-glasses"></i>Eye Protection</div>
@@ -404,7 +431,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <footer class="footer">
@@ -422,7 +448,7 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Open Recommended Models by default
+            // Recommended Models stays OPEN by default
             toggleSection('models');
         });
     </script>
